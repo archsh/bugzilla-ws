@@ -17,7 +17,10 @@ class BugzillaConnector(object):
             params = dict()
             for key in request.GET.keys():
                 print '%s = %s' % (key,request.GET[key])
-                params[key] = request.GET[key]
+                if key.endswith('ids') or key.endswith('names'):
+                    params[key] = request.GET[key].split(',')
+                else:
+                    params[key] = request.GET[key]
             result = getattr(self._xmlrpc,klass+'.'+function)(params)
         else:
             result = getattr(self._xmlrpc,klass+'.'+function)()

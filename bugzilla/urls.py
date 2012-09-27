@@ -15,6 +15,5 @@ urlpatterns = patterns('',
 
     # Uncomment the next line to enable the admin:
     # url(r'^admin/', include(admin.site.urls)),
-    url(r'^test$',views.testView),
     url(r'^(?P<namespace>bug|bugzilla|product|util|user)/(?P<function>[a-zA-Z0-9_\.]{1,})', views.BugzillaConnector(settings.BUGZILLA_XMLRPC)._dispatcher),
 )
