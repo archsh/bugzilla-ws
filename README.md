@@ -3,11 +3,11 @@ bugzilla-ws
 
 A HTTP interface adapter for bugzilla xmlrpc
 
-Bugzilla::WebService::Bug
-Bugzilla::WebService::Bugzilla
-Bugzilla::WebService::Product
-Bugzilla::WebService::User
-Bugzilla::WebService::Util
+- Bugzilla::WebService::Bug
+- Bugzilla::WebService::Bugzilla
+- Bugzilla::WebService::Product
+- Bugzilla::WebService::User
+- Bugzilla::WebService::Util
 
 GET /{namespace}/{function}?{params}
 
