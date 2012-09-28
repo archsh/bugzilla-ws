@@ -56,7 +56,7 @@ class CookieAuthXMLRPCTransport(xmlrpclib.Transport):
         bugz_cookies = re.findall(r'Bugzilla[0-9a-zA-Z_]*\=[0-9a-zA-Z_]*',cookies)
         f = open(self.cookiefile,'w')
         for line in bugz_cookies:
-            print 'write line: %s' % line
+            #print 'write line: %s' % line
             f.write('%s\n'%line)
             #f.writelines(line)
         f.close()
@@ -151,6 +151,5 @@ class BugzillaConnector(object):
             return HttpResponse(json.dumps({'fault':'%s'%f}))
         except Exception, e:
             return HttpResponse(json.dumps({'fault':'%s'%e}))
-        #print result
         return HttpResponse(json.dumps(result,default=dthandler))
     
